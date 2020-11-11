@@ -1,0 +1,62 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+/*버튼, 마진, 폰트사이즈*/
+body{
+    background-color: #FAFAFA;
+}
+.login__body{
+    background-color: #FAFAFA;
+}
+.btn1{
+    margin: 10px 0;
+    background-color:#B2DFFC ;
+    height: 30px;
+    color: white;
+    border-radius: 6px;
+    border: 0;
+    font-weight: 700;
+}
+.a-link-facebook{
+    color: #385185;
+    font-weight: 700;
+    text-decoration: none;
+}
+.a-link-forget{
+    text-decoration: none;
+    font-size: 12px;
+    color: #00376B;
+}
+.a-link-{
+    color: #0095F6;
+    text-decoration: none;
+}
+
+/* mt , mb ml , mr */
+.mt10{
+    margin-top: 10px;
+}
+.mt15{
+    margin-top: 15px;
+}
+.mb10{
+    margin-bottom: 10px;
+}
+.mb15{
+    margin-bottom: 15px;
+}
+.ml10{
+    margin-left: 10px;
+}
+.ml5{
+    margin-left: 5px;
+}
+.display-flex{
+    display: flex;
+}
+.font--weight-600{
+    font-weight: 600;
+}

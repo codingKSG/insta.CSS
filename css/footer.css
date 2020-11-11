@@ -1,0 +1,25 @@
+footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.footer__menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.footer__menu > a {
+    margin-right: 10px;
+}
+
+.footer__under {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.footer__g-font {
+    color: #8E8E8E;
+    font-size: 12px;
+    text-decoration: none;
+}

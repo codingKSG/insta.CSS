@@ -1,0 +1,50 @@
+.modal{
+    position: fixed;
+    z-index: 3;
+    top: 200px;
+    left: 470px;
+    display: none;
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 rgb(104, 103, 103);
+    padding: 15px;
+    background-color: white;
+}
+
+.modal__alarm{
+    display: flex;
+    height: 50px;
+    margin: 5px 15px;
+}
+.alarm__text{
+    display: flex;
+    flex: 9;
+    border-bottom: 1px solid black;
+    margin-left: 15px;
+}
+.alarm__img{
+    flex: 1;
+}
+.alarm__img > img{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    box-shadow: 0 0 3px 0 black;
+}
+.alarm__text__comment{
+    flex: 8;
+    font-size: 13px;
+
+}
+.alarm__text__img{
+    flex: 1;
+}
+.comment__date{
+    margin-top: 3px;
+    color: rgb(155, 155, 155);
+}
+.alarm__text__img >img{
+    height: 40px;
+    width: 40px;
+}

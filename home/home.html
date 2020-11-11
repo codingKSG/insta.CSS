@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/instagram/css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__box">
+            <div class="header__logo">
+                <img src="/instagram/images/instagram_header-logo.png" />
+            </div>
+            <div class="header__search">
+                <div id="searchInput" class="search__input">
+                    <div class="search__icon__del"><i class="material-icons">search</i></div>
+                    <input type="text" placeholder="검색">
+                    <div class="search__icon__del" onclick="searchInputHide()">
+                        <i class="material-icons">highlight_off</i>
+                    </div>
+                </div>
+                <div class="search__menu" id="search" onclick="searchInputShow()">
+                    <div class="search__icon"><i class="material-icons">search</i></div>
+                    <div class="search__tag">검색</div>
+                </div>
+            </div>
+            <div class="header__menu">
+                <div><a href="/instagram/home/home.html"><i class="material-icons">home</i></a></div>
+                <div><a href="#"><i class="material-icons">near_me</i></a></div>
+                <div><a href="/instagram/explore/explore.html"><i class="material-icons">explore</i></a></div>
+                <div><i class="material-icons" onclick="modal()">favorite_border</i></div>
+                <div><a href="/instagram/profile/profile.html"><i class="material-icons">account_circle</i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="home__main" style="background-color: #FAFAFA;">
+        <div style=" background-color: #FAFAFA;" class="row home">
+            <!-- 여백 -->
+            <div class="col-sm-1"></div>
+
+            <div class="col-sm-7">
+                <!-- 위에 있는 라이브 유저 -->
+                <div class="home__live-users">
+                    <div style="width: 30%; text-align: center;">
+                        <img class="home__live-users-pic" src="/instagram/images/home__live-users-1.png" />
+                        <div class="home__live-users-id">Angmond</div>
+                    </div>
+                    <div style="width: 30%; text-align: center;">
+                        <img class="home__live-users-pic" src="/instagram/images/home__live-users-2.png" />
+                        <div class="home__live-users-id">Scappy</div>
+                    </div>
+                    <div style="width: 30%; text-align: center;">
+                        <img class="home__live-users-pic" src="/instagram/images/home__live-users-3.png" />
+                        <div class="home__live-users-id">Pandazzang</div>
+                    </div>
+                    <div style="width: 30%; text-align: center;">
+                        <img class="home__live-users-pic" src="/instagram/images/home__live-users-4.png" />
+                        <div class="home__live-users-id">Cutepeng</div>
+                    </div>
+                    <div style="width: 30%; text-align: center;">
+                        <img class="home__live-users-pic" src="/instagram/images/home__live-users-5.png" />
+                        <div class="home__live-users-id">Ryan._.</div>
+                    </div>
+                    <div style="width: 30%; text-align: center;">
+                        <img class="home__live-users-pic" src="/instagram/images/home__live-users-6.png" />
+                        <div class="home__live-users-id">Jordy</div>
+                    </div>
+                </div>
+                <!-- 피드 -->
+                <div class="home__feeds">
+                    <!-- 글(사진) 1 -->
+                    <article class="home__article">
+                        <!-- 유저 이미지, 아이디, 지역, 메뉴아이콘 -->
+                        <div class="home__article__header">
+                            <div class="home__article__header-img">
+                                <img src="/instagram/images/home__article__header-img-1.png" />
+                            </div>
+                            <div class="home__article__header-name">
+                                <div class="home__article__header-name-id">Ryan._.</div>
+                                <div class="home__article__header-name-area">Busan, Korea</div>
+                            </div>
+                            <div class="home__article__header-menu-icon">
+                                <a style="text-decoration: none; color: black;" href="#">···</a>
+                            </div>
+                        </div>
+                        <!-- 유저가 올린 사진(슬라이드) -->
+                        <div id="demo1" class="carousel slide home__article__main-img" data-ride="carousel">
+
+                            <!-- Indicators -->
+                            <ul class="carousel-indicators">
+                                <li data-target="#demo1" data-slide-to="0" class="active"></li>
+                                <li data-target="#demo1" data-slide-to="1"></li>
+                                <li data-target="#demo1" data-slide-to="2"></li>
+                            </ul>
+
+                            <!-- The slideshow -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="/instagram/images/home__article__main-img-1.png" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/instagram/images/home__article__main-img-2.jpg">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/instagram/images/home__article__main-img-3.jpg">
+                                </div>
+                            </div>
+
+                            <!-- Left and right controls -->
+                            <a class="carousel-control-prev" href="#demo1" data-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#demo1" data-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </a>
+                        </div>
+                        <!-- 유저 좋아요 메뉴 및 댓글 -->
+                        <div class="home__article__footer">
+                            <!-- 유저 좋아요 메뉴 -->
+                            <div class="home__article__footer-menu">
+                                <div class="home__article__footer-menu-icons">
+                                    <button class="home__article__footer-menu-like" id="like1" checked="disabled">
+                                        <i class="large material-icons">favorite_border</i>
+                                    </button>
+                                    <div class="home__article__footer-menu-comment">
+                                        <i class="large material-icons">mode_comment</i>
+                                    </div>
+                                    <div class="home__article__footer-menu-message">
+                                        <i class="material-icons">near_me</i>
+                                    </div>
+                                </div>
+                                <div class="home__article__footer-menu-save">
+                                    <i class="material-icons">bookmark_border</i>
+                                </div>
+                            </div>
+                            <!-- 유저 좋아요 누른 사람, 글, 댓글 -->
+                            <div class="home__article__footer-content">
+                                <!-- 좋아요 누른 사람 -->
+                                <div class="home__article__footer-content-wholike">
+                                    <div class="home__article__footer-content-wholike-img">
+                                        <img src="/instagram/images/home__article__footer-content-wholike-img-1.png" />
+                                    </div>
+                                    <div class="home__article__footer-content-wholike-text">
+                                        <b style="font-size: 12px; cursor: pointer; font-weight: 700;">Angmond</b>님 <b
+                                            style="cursor: pointer; font-weight: 600;">외 428명</b>이 좋아합니다
+                                    </div>
+                                </div>
+                                <!-- 본문, 댓글 -->
+                                <div class="home__article__footer-content-context">
+                                    <!-- 게시글 본문 -->
+                                    <div class="home__article__footer-content-text">
+                                        <span style="margin-right: 5px; font-size: 12px;"><b>Ryan._.</b></span>
+                                        <span style="margin-top: 6px;">여름이 최고야</span>
+                                    </div>
+                                    <!-- 게시글 댓글 -->
+                                    <div class="home__article__footer-content-comment" id="comment-box-1">
+                                        <div style="height: auto; font-size: 14px; font-weight: 500; color:#869e9c;">댓글
+                                            6개 모두 보기
+                                        </div>
+                                        <div class="home__article__footer-content-comment-box">
+                                            <div class="home__article__footer-content-comment-id">Tube
+                                                <div class="home__article__footer-content-comment-text" id="comment-1">
+                                                    저때재밌었는데!!</div>
+                                            </div>
+                                            <button class="home__article__footer-content-comment-like">
+                                                <i style="font-size: 12px;"
+                                                    class="large material-icons">favorite_border</i>
+                                            </button>
+                                        </div>
+                                        <div class="home__article__footer-content-comment-box">
+                                            <div class="home__article__footer-content-comment-id">Scappy
+                                                <div class="home__article__footer-content-comment-text" id="comment-2">
+                                                    다음에 같이가자</div>
+                                            </div>
+                                            <button class="home__article__footer-content-comment-like">
+                                                <i style="font-size: 12px;"
+                                                    class="large material-icons">favorite_border</i>
+                                            </button>
+                                        </div>
+                                        <div class="home__article__footer-content-comment-box">
+                                            <div class="home__article__footer-content-comment-id">Angmond
+                                                <div class="home__article__footer-content-comment-text" id="comment-3">
+                                                    여기어디야??</div>
+                                            </div>
+                                            <button class="home__article__footer-content-comment-like">
+                                                <i style="font-size: 12px;"
+                                                    class="large material-icons">favorite_border</i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 댓글 달기 -->
+                                <div class="home__article__footer-content-leave-comment-box">
+                                    <input class="home__article__footer-content-leave-comment-input" type="text"
+                                        placeholder="댓글 달기..." id="input_comment-1" />
+                                    <button onclick="addComment(1)"
+                                        class="home__article__footer-content-leave-comment-button">게시</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 글(사진) 2 -->
+                    <article class="home__article">
+                        <!-- 유저 이미지, 아이디, 지역, 메뉴아이콘 -->
+                        <div class="home__article__header">
+                            <div class="home__article__header-img">
+                                <img src="/instagram/images/home__article__header-img-2.png" />
+                            </div>
+                            <div class="home__article__header-name">
+                                <div class="home__article__header-name-id">Scappy</div>
+                                <div class="home__article__header-name-area">Ulsan, Korea</div>
+                            </div>
+                            <div class="home__article__header-menu-icon">
+                                <a style="text-decoration: none; color: black;" href="#">···</a>
+                            </div>
+                        </div>
+                        <!-- 유저가 올린 사진(슬라이드) -->
+                        <div id="demo" class="carousel slide home__article__main-img" data-ride="carousel">
+
+                            <!-- The slideshow -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="/instagram/images/home__article__main-img-4.png">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 유저 좋아요 메뉴 및 댓글 -->
+                        <div class="home__article__footer">
+                            <!-- 유저 좋아요 메뉴 -->
+                            <div class="home__article__footer-menu">
+                                <div class="home__article__footer-menu-icons">
+                                    <button class="home__article__footer-menu-like" id="like2" checked="disabled">
+                                        <i class="large material-icons">favorite_border</i>
+                                    </button>
+                                    <div class="home__article__footer-menu-comment">
+                                        <i class="large material-icons">mode_comment</i>
+                                    </div>
+                                    <div class="home__article__footer-menu-message">
+                                        <i class="material-icons">near_me</i>
+                                    </div>
+                                </div>
+                                <div class="home__article__footer-menu-save">
+                                    <i class="material-icons">bookmark_border</i>
+                                </div>
+                            </div>
+                            <!-- 유저 좋아요 누른 사람, 글, 댓글 -->
+                            <div class="home__article__footer-content">
+                                <!-- 좋아요 누른 사람 -->
+                                <div class="home__article__footer-content-wholike">
+                                    <div class="home__article__footer-content-wholike-img">
+                                        <img src="/instagram/images/home__article__footer-content-wholike-img-1.png" />
+                                    </div>
+                                    <div class="home__article__footer-content-wholike-text">
+                                        <b style="font-size: 12px; cursor: pointer; font-weight: 700;">Angmond</b>님 <b
+                                            style="cursor: pointer; font-weight: 600;">외 28명</b>이 좋아합니다
+                                    </div>
+                                </div>
+                                <!-- 본문, 댓글 -->
+                                <div class="home__article__footer-content-context">
+                                    <!-- 게시글 본문 -->
+                                    <div class="home__article__footer-content-text">
+                                        <span style="margin-right: 5px; font-size: 12px;"><b>Scappy</b></span>
+                                        <span style="margin-top: 6px;">카페옴 ㅋㅋ</span>
+                                    </div>
+                                    <!-- 게시글 댓글 -->
+                                    <div class="home__article__footer-content-comment" id="comment-box-2">
+                                        <div style="height: auto; font-size: 14px; font-weight: 500; color:#869e9c;">댓글
+                                            3개 모두 보기
+                                        </div>
+                                        <div class="home__article__footer-content-comment-box">
+                                            <div class="home__article__footer-content-comment-id">Scappy
+                                                <div class="home__article__footer-content-comment-text" id="comment-1">
+                                                    .</div>
+                                            </div>
+                                            <button class="home__article__footer-content-comment-like">
+                                                <i style="font-size: 12px;"
+                                                    class="large material-icons">favorite_border</i>
+                                            </button>
+                                        </div>
+                                        <div class="home__article__footer-content-comment-box">
+                                            <div class="home__article__footer-content-comment-id">Jordy
+                                                <div class="home__article__footer-content-comment-text" id="comment-2">
+                                                    다음에 같이ㄱ</div>
+                                            </div>
+                                            <button class="home__article__footer-content-comment-like">
+                                                <i style="font-size: 12px;"
+                                                    class="large material-icons">favorite_border</i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 댓글 달기 -->
+                                <div class="home__article__footer-content-leave-comment-box">
+                                    <input class="home__article__footer-content-leave-comment-input" type="text"
+                                        placeholder="댓글 달기..." id="input_comment-2" />
+                                    <button onclick="addComment(2)"
+                                        class="home__article__footer-content-leave-comment-button">게시</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- 글(사진) 3 -->
+                    <article class="home__article">
+                        <!-- 유저 이미지, 아이디, 지역, 메뉴아이콘 -->
+                        <div class="home__article__header">
+                            <div class="home__article__header-img">
+                                <img src="/instagram/images/home__article__header-img-3.png" />
+                            </div>
+                            <div class="home__article__header-name">
+                                <div class="home__article__header-name-id">Con</div>
+                                <div class="home__article__header-name-area">Seoul, Korea</div>
+                            </div>
+                            <div class="home__article__header-menu-icon">
+                                <a style="text-decoration: none; color: black;" href="#">···</a>
+                            </div>
+                        </div>
+                        <!-- 유저가 올린 사진(슬라이드) -->
+                        <div id="demo2" class="carousel slide home__article__main-img" data-ride="carousel">
+
+                            <!-- Indicators -->
+                            <ul class="carousel-indicators">
+                                <li data-target="#demo2" data-slide-to="0" class="active"></li>
+                                <li data-target="#demo2" data-slide-to="1"></li>
+                                <li data-target="#demo2" data-slide-to="2"></li>
+                            </ul>
+
+                            <!-- The slideshow -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="/instagram/images/home__article__main-img-5.png">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/instagram/images/home__article__main-img-6.png">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/instagram/images/home__article__main-img-7.png">
+                                </div>
+                            </div>
+
+                            <!-- Left and right controls -->
+                            <a class="carousel-control-prev" href="#demo2" data-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#demo2" data-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </a>
+                        </div>
+                        <!-- 유저 좋아요 메뉴 및 댓글 -->
+                        <div class="home__article__footer">
+                            <!-- 유저 좋아요 메뉴 -->
+                            <div class="home__article__footer-menu">
+                                <div class="home__article__footer-menu-icons">
+                                    <button class="home__article__footer-menu-like" id="like3" checked="disabled">
+                                        <i class="large material-icons">favorite_border</i>
+                                    </button>
+                                    <div class="home__article__footer-menu-comment">
+                                        <i class="large material-icons">mode_comment</i>
+                                    </div>
+                                    <div class="home__article__footer-menu-message">
+                                        <i class="material-icons">near_me</i>
+                                    </div>
+                                </div>
+                                <div class="home__article__footer-menu-save">
+                                    <i class="material-icons">bookmark_border</i>
+                                </div>
+                            </div>
+                            <!-- 유저 좋아요 누른 사람, 글, 댓글 -->
+                            <div class="home__article__footer-content">
+                                <!-- 좋아요 누른 사람 -->
+                                <div class="home__article__footer-content-wholike">
+                                    <div class="home__article__footer-content-wholike-img">
+                                        <img src="/instagram/images/home__article__footer-content-wholike-img-2.png" />
+                                    </div>
+                                    <div class="home__article__footer-content-wholike-text">
+                                        <b style="font-size: 12px; cursor: pointer; font-weight: 700;">Scappy</b>님 <b
+                                            style="cursor: pointer; font-weight: 600;">외 711명</b>이 좋아합니다
+                                    </div>
+                                </div>
+                                <!-- 본문, 댓글 -->
+                                <div class="home__article__footer-content-context">
+                                    <!-- 게시글 본문 -->
+                                    <div class="home__article__footer-content-text">
+                                        <span style="margin-right: 5px; font-size: 12px;"><b>Con</b></span>
+                                        <span style="margin-top: 6px;">작년에 갔던 대만</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- 글 삽입 구간 끝 -->
+            </div>
+            <div class="col-sm-3" style="margin-left: -25px;">
+                <!-- 홈 우측 카드 -->
+                <div class="card"
+                    style="position: fixed; width: 330px; height: 450px; background-color: #FAFAFA; border: 0;">
+                    <div class="card-header bg-light" style="height: 30%; display: flex; border: 0;">
+                        <div class="card-header__user-img"
+                            style=" width: 70%; height: 66px; display:flex; justify-content: center; align-items: center;">
+                            <img style="border-radius: 50%; width: 66px ; height: 66px;"
+                                src="/instagram/images/card-header__user-img_프로도.png" />
+                        </div>
+                        <div class="card-header__user-info" style="text-align: left; padding-top:6%; margin-left: 2px;">
+                            <span><b>Frodo</b><br /></span>
+                            <span>Frodo(26)</span>
+                        </div>
+                        <div class="card-header__change font--blue--12"
+                            style="width: 20%; text-align: right; padding-top: 10%;">
+                            전환
+                        </div>
+                    </div>
+                    <div class="card-body bg-light" style="padding-top: 0; background-color: #FAFAFA; border: 0;">
+                        <table style="width: 100%;">
+                            <!-- 본인 정보 -->
+                            <tr style="display: flex; justify-content: space-between; align-items: center;">
+                                <td style="font-size: 15px; font-weight: 700; color: #8E8E8E;">회원님을 위한 추천</td>
+                                <td style="font-size: 13px; font-weight: 600;">모두 보기</td>
+                            </tr>
+                            <!-- 다른 유저 추천 -->
+                            <tr style="display: flex; justify-content: space-between; align-items: center;">
+                                <td style="display: flex; justify-content: center; align-items: center;">
+                                    <div style="width: 32px; text-align: center; margin: 15px;">
+                                        <img style=" border-radius: 50%; width: 100%;"
+                                            src="/instagram/images/card-other-user-img1.png" />
+                                    </div>
+                                    <div class="home__user__recommend">
+                                        <div style="font-size: 13px; font-weight: 700;">Apeach</div>
+                                        <div class="font--gray--11">Con님이 팔로우합니다</div>
+                                    </div>
+                                </td>
+                                <td class="font--blue--12">팔로우</td>
+                            </tr>
+                            <!-- 다른 유저 추천 -->
+                            <tr style="display: flex; justify-content: space-between; align-items: center;">
+                                <td style="display: flex; justify-content: center; align-items: center;">
+                                    <div style="width: 32px; text-align: center; margin: 15px;">
+                                        <img style="border-radius: 50%; width: 100%;"
+                                            src="/instagram/images/card-other-user-img2.png" />
+                                    </div>
+                                    <div class="home__user__recommend">
+                                        <div style="font-size: 13px; font-weight: 700;">Prodo</div>
+                                        <div class="font--gray--11">Con, Neo님이 팔로우합니다</div>
+                                    </div>
+                                </td>
+                                <td class="font--blue--12">팔로우</td>
+                            </tr>
+                            <!-- 다른 유저 추천 -->
+                            <tr style="display: flex; justify-content: space-between; align-items: center;">
+                                <td style="display: flex; justify-content: center; align-items: center;">
+                                    <div style="width: 32px; text-align: center; margin: 15px;">
+                                        <img style="border-radius: 50%; width: 100%;"
+                                            src="/instagram/images/card-other-user-img3.png" />
+                                    </div>
+                                    <div class="home__user__recommend">
+                                        <div style="font-size: 13px; font-weight: 700;">Muzi</div>
+                                        <div class="font--gray--11">Con님이 팔로우합니다</div>
+                                    </div>
+                                </td>
+                                <td class="font--blue--12">팔로우</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-footer bg-light" style="font-size: 12px; color: #8E8E8E; height: 30%; border: 0;">
+                        소개·도움말·홍보 센터·API·채용 정보<br />개인정보처리방침·약관·위치·인기 계정·해시태그·언어<br /><br />
+                        © 2020 INSTAGRAM FROM FACEBOOK
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 여백 -->
+        <div class="col-sm-1"></div>
+
+        <footer>
+            <div class="footer__menu">
+                <a class="footer__g-font" href="#">소개</a>
+                <a class="footer__g-font" href="#">블로그</a>
+                <a class="footer__g-font" href="#">채용 정보</a>
+                <a class="footer__g-font" href="#">도움말</a>
+                <a class="footer__g-font" href="#">API</a>
+                <a class="footer__g-font" href="#">개인정보처리방침</a>
+                <a class="footer__g-font" href="#">약관</a>
+                <a class="footer__g-font" href="#">인기 계정</a>
+                <a class="footer__g-font" href="#">해시태그</a>
+                <a class="footer__g-font" href="#">위치</a>
+            </div>
+            <div class="footer__under">
+                <a class="footer__g-font" href="#" style="margin-right: 5px;">
+                    한국어
+                    <img src="/instagram/images/arrow-btm.png" style="width:12px; height:12px;">
+                </a>
+                <span class="footer__g-font" style="font-size: 11px;">© 2020 Instagram from Facebook</span>
+            </div>
+        </footer>
+
+        <modal>
+            <div class="modal" id="modal">
+                <div class="modal__alarm">
+                    <div class="alarm__img">
+                        <img src="/instagram/images/튜브.jfif" />
+                    </div>
+                    <div class="alarm__text">
+                        <div class="alarm__text__comment">
+                            <b>h_ggob</b> 님이 댓글에서 회원님을 언급했습니다.
+                            <div class="comment__date">1주</div>
+                        </div>
+                        <div class="alarm__text__img">
+                            <img src="/instagram/images/서면.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__alarm">
+                    <div class="alarm__img">
+                        <img src="/instagram/images/신동.jfif" />
+                    </div>
+                    <div class="alarm__text">
+                        <div class="alarm__text__comment">
+                            <b>shin__d</b> 님이 댓글에서 회원님을 언급했습니다.
+                            <div class="comment__date">
+                                3주
+                            </div>
+                        </div>
+                        <div class="alarm__text__img">
+                            <img src="/instagram/images/덕천.jfif" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__alarm">
+                    <div class="alarm__img">
+                        <img src="/instagram/images/효정.jfif" />
+                    </div>
+                    <div class="alarm__text">
+                        <div class="alarm__text__comment">
+                            <b>_hyojung_</b> 님이 회원님의 사진을 좋아합니다.
+                            <div class="comment__date">
+                                3주
+                            </div>
+                        </div>
+                        <div class="alarm__text__img">
+                            <img src="/instagram/images/메이플.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </modal>
+
+        <script>
+            function modal() {
+                $("#modal").toggle();
+            }
+            $("#searchInput").hide();
+
+            function searchInputShow() {
+                $("#searchInput").show();
+                $("#search").hide();
+            }
+
+            function searchInputHide() {
+                $("#search").show();
+                $("#searchInput").hide();
+            }
+
+            var no = 4;
+
+            function addComment(n) {
+                var comment = $("#input_comment-" + n).val();
+
+                var commentItem = `<div class="home__article__footer-content-comment-box">`;
+                commentItem += `<div class="home__article__footer-content-comment-id">Tube`;
+                commentItem += `<div class="home__article__footer-content-comment-text" id="comment-${no}">`;
+                commentItem += `${comment}</div>`;
+                commentItem += `</div> <button class="home__article__footer-content-comment-like">`;
+                commentItem += `<i style="font-size: 12px;" class="large material-icons">favorite_border</i></button>`;
+                commentItem += `</div>`;
+
+                $("#comment-box-" + n).append(commentItem);
+                no += 1;
+
+                $("#input_comment-" + n).val("");
+            }
+
+            $("#like1").click(function () {
+                $("#like1").html('<i style="color: #ED4956;" class="large material-icons">favorite</i>');
+            });
+
+            $("#like2").click(function () {
+                $("#like2").html('<i style="color: #ED4956;" class="large material-icons">favorite</i>');
+            });
+
+            $("#like3").click(function () {
+                $("#like3").html('<i style="color: #ED4956;" class="large material-icons">favorite</i>');
+            });
+        </script>
+
+
+</body>
+
+</html>
